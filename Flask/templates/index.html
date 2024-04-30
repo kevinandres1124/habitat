@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitat Muebles</title>
+    <link rel="stylesheet" href="ruta/a/tu/styles.css">
+    <style>
+        .portada {
+            position: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            font-family: Roboto, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: skyblue; /* Cambia el color del texto si es necesario */
+            z-index: 1; /* Asegura que el título esté por encima de la imagen */
+            width: 100%; /* Ajusta el ancho según sea necesario */
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/habitat.png') }}" alt="Habitat Muebles">
+    </div>
+    <div class="portada">
+        <img src="{{ url_for('static', filename='images/modern_kitchenc.png') }}" alt="Portada">
+    </div>
+    <h1 style="text-align: center; font-size: 50px;font-family: Roboto, sans-serif;">Habitat Muebles</h1>
+    <p style= "; font-family: Roboto, sans-serif; ">Fabricamos todo tipo de muebles en madera y melamina, contamos con más de 10 años de experiencia.</p>
+    <nav>
+        <ul>
+            {% for categoria in categorias %}
+            <li><a href="#">{{ categoria }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <footer>
+        <p>Ibarra, Ecuador - Contacto: tu@email.com</p>
+    </footer>
+</body>
+</html>
